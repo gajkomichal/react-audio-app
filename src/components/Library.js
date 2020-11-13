@@ -1,25 +1,31 @@
-import LibraryItem from './LibraryItem';
+import React from "react";
 
-export const Library = ({
+import LibrarySong from "./LibrarySong";
+
+const Library = ({
   songs,
   setCurrentSong,
-  isPlaying,
   audioRef,
+  isPlaying,
   setSongs,
+  libraryStatus,
 }) => {
   return (
-    <div className='library'>
+    <div className={`library ${libraryStatus ? "active-library" : " "}`}>
       <h2>Library</h2>
-      <div className='library-songs'>
+      <div className="library-songs">
         {songs.map((song) => (
-          <LibraryItem
-            setCurrentSong={setCurrentSong}
+          <LibrarySong
+            songs={songs}
+            cover={song.cover}
+            name={song.name}
+            artist={song.artist}
+            active={song.active}
             key={song.id}
             id={song.id}
-            song={song}
-            songs={songs}
-            isPlaying={isPlaying}
+            setCurrentSong={setCurrentSong}
             audioRef={audioRef}
+            isPlaying={isPlaying}
             setSongs={setSongs}
           />
         ))}
