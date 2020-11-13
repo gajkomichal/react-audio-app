@@ -1,0 +1,23 @@
+.time-control {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        padding: 1rem;
+    }
+}
+
+.play-control {
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    margin: 0 auto;
+
+    svg {
+        cursor: pointer;
+    }
+}
